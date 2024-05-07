@@ -213,7 +213,7 @@ HANDLE hInput;
 
 short semaphore = 0;
 
-DWORD timer(LPVOID x) {
+DWORD WINAPI timer(LPVOID x) {
     Tamagochi_and_Food_and_Care* taf = (Tamagochi_and_Food_and_Care*)x;
     while (semaphore != -1) {
         this_thread::sleep_for(1s);
@@ -222,7 +222,7 @@ DWORD timer(LPVOID x) {
     return 0;
 }
 
-DWORD input(LPVOID x) {
+DWORD WINAPI input(LPVOID x) {
     Tamagochi_and_Food_and_Care * taf = (Tamagochi_and_Food_and_Care*)x;
     char c;
     while(1) {
